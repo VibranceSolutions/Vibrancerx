@@ -369,12 +369,14 @@ const AdminLandingPage: React.FC = () => {
                   View Compliance Report
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
-                className="bg-transparent border-white text-white hover:bg-white hover:text-green-600"
-              >
-                Security Documentation
-              </Button>
+              <Link to="/about">
+                <Button 
+                  variant="outline" 
+                  className="bg-transparent border-white text-white hover:bg-white hover:text-green-600"
+                >
+                  Security Documentation
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -397,13 +399,15 @@ const AdminLandingPage: React.FC = () => {
                 <TrendingUp className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="bg-transparent border-white text-white hover:bg-white hover:text-gray-900"
-            >
-              System Reports
-            </Button>
+            <Link to="/about">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-transparent border-white text-white hover:bg-white hover:text-gray-900"
+              >
+                System Reports
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

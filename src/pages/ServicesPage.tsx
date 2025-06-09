@@ -424,7 +424,7 @@ const ServicesPage: React.FC = () => {
             <p className="text-gray-600 mb-4">
               Insurance coverage may apply. Check with your insurance provider for telemedicine benefits.
             </p>
-            <Link to="/insurance" className="text-primary hover:text-primary-dark font-medium">
+            <Link to="/about" className="text-primary hover:text-primary-dark font-medium">
               Learn about insurance coverage <ArrowRight className="inline h-4 w-4 ml-1" />
             </Link>
           </div>

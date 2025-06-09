@@ -169,9 +169,9 @@ const DoctorLandingPage: React.FC = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/doctor/patients">
+              <Link to="/doctor/dashboard">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                  Patient Records
+                  Go to Dashboard
                 </Button>
               </Link>
             </div>
@@ -340,13 +340,15 @@ const DoctorLandingPage: React.FC = () => {
                 <TrendingUp className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="bg-transparent border-white text-white hover:bg-white hover:text-green-600"
-            >
-              Professional Resources
-            </Button>
+            <Link to="/about">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-transparent border-white text-white hover:bg-white hover:text-green-600"
+              >
+                Professional Resources
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

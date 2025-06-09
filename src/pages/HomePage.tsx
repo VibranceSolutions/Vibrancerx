@@ -93,13 +93,13 @@ const HomePage: React.FC = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link to="/services#pricing">
+                <Link to="/about">
                   <Button 
                     variant="outline" 
                     size="lg" 
                     className="border-white text-white hover:bg-white hover:text-primary w-full sm:w-auto"
                   >
-                    View Pricing
+                    Learn More
                   </Button>
                 </Link>
               </div>
@@ -194,7 +194,7 @@ const HomePage: React.FC = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Link to="/login">
+            <Link to="/services">
               <Button size="lg">
                 Browse All Specialties
                 <ArrowRight className="ml-2 h-5 w-5" />

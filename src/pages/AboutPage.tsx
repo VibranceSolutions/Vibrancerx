@@ -123,19 +123,21 @@ const AboutPage: React.FC = () => {
             Through cutting-edge technology and compassionate care, we're building the future of medicine.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/register">
+            <Link to="/login">
               <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                 Join Our Community
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-white text-white hover:bg-white hover:text-primary"
-            >
-              Learn More
-            </Button>
+            <Link to="/services">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-white text-white hover:bg-white hover:text-primary"
+              >
+                Our Services
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -390,7 +392,7 @@ const AboutPage: React.FC = () => {
             for their telemedicine needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/register">
+            <Link to="/login">
               <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                 Get Started Today
                 <ArrowRight className="ml-2 h-5 w-5" />
