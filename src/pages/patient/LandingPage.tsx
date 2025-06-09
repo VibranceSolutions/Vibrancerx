@@ -126,9 +126,9 @@ const PatientLandingPage: React.FC = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/patient/appointments">
+              <Link to="/patient/dashboard">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                  View Appointments
+                  Go to Dashboard
                 </Button>
               </Link>
             </div>
@@ -276,12 +276,23 @@ const PatientLandingPage: React.FC = () => {
           <p className="text-xl text-blue-100 mb-8">
             Book your first consultation today and experience the future of healthcare.
           </p>
-          <Link to="/patient/find-doctors">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-              Get Started Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/patient/find-doctors">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
+                Get Started Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/patient/dashboard">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
+              >
+                View Dashboard
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
