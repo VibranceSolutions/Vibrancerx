@@ -134,24 +134,27 @@ const LoginPage: React.FC = () => {
           </p>
           <div className="mt-6 flex flex-col space-y-2">
             <p className="text-xs text-gray-500">
-              For demo purposes, use:
+              For demo purposes, use any of these credentials:
             </p>
-            <div className="grid grid-cols-3 gap-2 text-xs text-gray-600">
-              <div>
-                <p className="font-medium">Patient</p>
-                <p>patient@example.com</p>
+            <div className="grid grid-cols-1 gap-2 text-xs text-gray-600">
+              <div className="bg-gray-50 p-2 rounded">
+                <p className="font-medium text-blue-600">Patient Account</p>
+                <p>Email: patient@example.com</p>
+                <p>Password: password123</p>
               </div>
-              <div>
-                <p className="font-medium">Doctor</p>
-                <p>doctor@example.com</p>
+              <div className="bg-gray-50 p-2 rounded">
+                <p className="font-medium text-green-600">Doctor Account</p>
+                <p>Email: doctor@example.com</p>
+                <p>Password: password123</p>
               </div>
-              <div>
-                <p className="font-medium">Admin</p>
-                <p>admin@example.com</p>
+              <div className="bg-gray-50 p-2 rounded">
+                <p className="font-medium text-purple-600">Admin Account</p>
+                <p>Email: admin@example.com</p>
+                <p>Password: password123</p>
               </div>
             </div>
             <p className="text-xs text-gray-500">
-              Any password will work (min 8 chars)
+              Or use any email containing "patient", "doctor", or "admin"
             </p>
           </div>
         </div>

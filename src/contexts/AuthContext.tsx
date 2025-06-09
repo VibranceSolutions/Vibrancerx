@@ -61,7 +61,8 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
       // Mock response - in a real app this would come from a secure API
       let mockUser: User;
       
-      if (email.includes('patient')) {
+      // Demo credentials logic
+      if (email.includes('patient') || email === 'patient@example.com') {
         mockUser = {
           id: '1',
           email,
@@ -70,16 +71,16 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
           role: 'patient',
           profileImage: 'https://randomuser.me/api/portraits/men/32.jpg',
         };
-      } else if (email.includes('doctor')) {
+      } else if (email.includes('doctor') || email === 'doctor@example.com') {
         mockUser = {
           id: '2',
           email,
           firstName: 'Sarah',
-          lastName: 'Smith',
+          lastName: 'Johnson',
           role: 'doctor',
           profileImage: 'https://randomuser.me/api/portraits/women/65.jpg',
         };
-      } else if (email.includes('admin')) {
+      } else if (email.includes('admin') || email === 'admin@example.com') {
         mockUser = {
           id: '3',
           email,
@@ -89,7 +90,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
           profileImage: 'https://randomuser.me/api/portraits/men/1.jpg',
         };
       } else {
-        // Default to patient role for demo
+        // Default to patient role for any other email
         mockUser = {
           id: '4',
           email,
@@ -110,7 +111,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
         `User logged in: ${mockUser.role}`
       );
       
-      toast.success('Login successful!');
+      toast.success(`Welcome back, ${mockUser.firstName}!`);
     } catch (error) {
       console.error('Login error:', error);
       toast.error('Login failed. Please check your credentials and try again.');
@@ -152,7 +153,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
         `New user registered: ${newUser.role}`
       );
       
-      toast.success('Registration successful!');
+      toast.success(`Welcome to MediConnect, ${newUser.firstName}!`);
     } catch (error) {
       console.error('Registration error:', error);
       toast.error('Registration failed. Please try again.');
