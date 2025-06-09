@@ -124,7 +124,7 @@ const ProtectedRoute: React.FC<React.PropsWithChildren<ProtectedRouteProps>> = (
   }
 
   if (user.role !== role) {
-    if (user.role === 'patient') return <Navigate to="/patient/landing" replace />;
+    if (user.role === 'patient') return <Navigate to="/patient/landing\" replace />;
     if (user.role === 'doctor') return <Navigate to="/doctor/landing" replace />;
     if (user.role === 'admin') return <Navigate to="/admin/landing" replace />;
   }
