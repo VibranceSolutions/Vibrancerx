@@ -65,8 +65,8 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/login" element={!user ? <LoginPage /> : <Navigate to={`/${user.role}/landing`} replace />} />
-        <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to={`/${user.role}/landing`} replace />} />
+        <Route path="/login" element={!user ? <LoginPage /> : <Navigate to={`/${user.role}/dashboard`} replace />} />
+        <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to={`/${user.role}/dashboard`} replace />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Route>
 
@@ -83,7 +83,7 @@ const App: React.FC = () => {
           <Route path="/patient/consultation/:appointmentId" element={<PatientConsultation />} />
           <Route path="/patient/prescriptions" element={<PatientPrescriptions />} />
           {/* Default redirect for /patient */}
-          <Route path="/patient" element={<Navigate to="/patient/landing\" replace />} />
+          <Route path="/patient" element={<Navigate to="/patient/dashboard" replace />} />
         </Route>
       </Route>
 
@@ -98,7 +98,7 @@ const App: React.FC = () => {
           <Route path="/doctor/consultation/:appointmentId" element={<DoctorConsultation />} />
           <Route path="/doctor/prescriptions" element={<DoctorPrescriptions />} />
           {/* Default redirect for /doctor */}
-          <Route path="/doctor" element={<Navigate to="/doctor/landing\" replace />} />
+          <Route path="/doctor" element={<Navigate to="/doctor/dashboard" replace />} />
         </Route>
       </Route>
 
@@ -112,7 +112,7 @@ const App: React.FC = () => {
           <Route path="/admin/payments" element={<ManagePayments />} />
           <Route path="/admin/settings" element={<SystemSettings />} />
           {/* Default redirect for /admin */}
-          <Route path="/admin" element={<Navigate to="/admin/landing\" replace />} />
+          <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
         </Route>
       </Route>
 
@@ -130,13 +130,13 @@ const ProtectedRoute: React.FC<React.PropsWithChildren<ProtectedRouteProps>> = (
   const { user } = useAuth();
 
   if (!user) {
-    return <Navigate to="/login\" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   if (user.role !== role) {
-    if (user.role === 'patient') return <Navigate to="/patient/landing" replace />;
-    if (user.role === 'doctor') return <Navigate to="/doctor/landing" replace />;
-    if (user.role === 'admin') return <Navigate to="/admin/landing" replace />;
+    if (user.role === 'patient') return <Navigate to="/patient/dashboard" replace />;
+    if (user.role === 'doctor') return <Navigate to="/doctor/dashboard" replace />;
+    if (user.role === 'admin') return <Navigate to="/admin/dashboard" replace />;
   }
 
   return <>{children}</>;

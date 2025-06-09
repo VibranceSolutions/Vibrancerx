@@ -66,7 +66,10 @@ const PatientLayout: React.FC = () => {
       )}
 
       {/* Mobile sidebar */}
-      <div className={`fixed inset-y-0 left-0 flex flex-col z-50 w-64 bg-white shadow-lg transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
+      <div 
+        data-testid="mobile-sidebar"
+        className={`fixed inset-y-0 left-0 flex flex-col z-50 w-64 bg-white shadow-lg transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}
+      >
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
           <span className="text-xl font-semibold text-primary">MediConnect</span>
           <button 
@@ -112,7 +115,10 @@ const PatientLayout: React.FC = () => {
       </div>
 
       {/* Desktop sidebar */}
-      <div className="hidden md:flex md:flex-col md:fixed md:inset-y-0 md:w-64 bg-white shadow-lg">
+      <div 
+        data-testid="desktop-sidebar"
+        className="hidden md:flex md:flex-col md:fixed md:inset-y-0 md:w-64 bg-white shadow-lg"
+      >
         <div className="flex items-center justify-center h-16 px-4 border-b border-gray-200">
           <span className="text-xl font-semibold text-primary">MediConnect</span>
         </div>
@@ -159,6 +165,7 @@ const PatientLayout: React.FC = () => {
                 type="button"
                 className="text-gray-500 hover:text-gray-700"
                 onClick={() => setSidebarOpen(true)}
+                aria-label="Open main menu"
               >
                 <Menu className="h-6 w-6" />
               </button>
@@ -173,6 +180,7 @@ const PatientLayout: React.FC = () => {
                     setNotificationsOpen(!notificationsOpen);
                     setUserMenuOpen(false);
                   }}
+                  aria-label="Notifications"
                 >
                   <span className="sr-only">Notifications</span>
                   <Bell className="h-6 w-6" />
@@ -228,6 +236,7 @@ const PatientLayout: React.FC = () => {
                     setUserMenuOpen(!userMenuOpen);
                     setNotificationsOpen(false);
                   }}
+                  aria-label="User menu"
                 >
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white">
                     {user?.profileImage ? (
