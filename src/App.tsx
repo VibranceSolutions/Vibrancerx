@@ -61,8 +61,8 @@ const App: React.FC = () => {
       {/* Public Routes */}
       <Route element={<RootLayout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={!user ? <LoginPage /> : <Navigate to={`/${user.role}/dashboard`} />} />
-        <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to={`/${user.role}/dashboard`} />} />
+        <Route path="/login" element={!user ? <LoginPage /> : <Navigate to={`/${user.role}/landing`} />} />
+        <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to={`/${user.role}/landing`} />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Route>
 
@@ -120,13 +120,13 @@ const ProtectedRoute: React.FC<React.PropsWithChildren<ProtectedRouteProps>> = (
   const { user } = useAuth();
 
   if (!user) {
-    return <Navigate to="/login\" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   if (user.role !== role) {
-    if (user.role === 'patient') return <Navigate to="/patient/dashboard" replace />;
-    if (user.role === 'doctor') return <Navigate to="/doctor/dashboard" replace />;
-    if (user.role === 'admin') return <Navigate to="/admin/dashboard" replace />;
+    if (user.role === 'patient') return <Navigate to="/patient/landing" replace />;
+    if (user.role === 'doctor') return <Navigate to="/doctor/landing" replace />;
+    if (user.role === 'admin') return <Navigate to="/admin/landing" replace />;
   }
 
   return <>{children}</>;

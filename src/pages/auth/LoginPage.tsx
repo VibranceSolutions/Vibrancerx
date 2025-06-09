@@ -38,11 +38,11 @@ const LoginPage: React.FC = () => {
       await login(data.email, data.password);
       
       // Determine redirect based on email for demo purposes
-      let redirectPath = '/patient/dashboard';
+      let redirectPath = '/patient/landing';
       if (data.email.includes('doctor')) {
-        redirectPath = '/doctor/dashboard';
+        redirectPath = '/doctor/landing';
       } else if (data.email.includes('admin')) {
-        redirectPath = '/admin/dashboard';
+        redirectPath = '/admin/landing';
       }
       
       navigate(redirectPath);
