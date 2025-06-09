@@ -93,7 +93,7 @@ const HomePage: React.FC = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link to="/services">
+                <Link to="/services#pricing">
                   <Button 
                     variant="outline" 
                     size="lg" 
