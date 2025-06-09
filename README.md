@@ -67,6 +67,7 @@ A modern, secure, and fully-featured telemedicine platform built with React, Typ
 - **ESLint** - Code linting and quality assurance
 - **PostCSS** - CSS processing and optimization
 - **Autoprefixer** - Automatic CSS vendor prefixing
+- **Vitest** - Unit testing framework
 
 ## 📦 Installation
 
@@ -111,6 +112,7 @@ src/
 │   ├── doctor/        # Doctor-specific pages
 │   └── admin/         # Admin-specific pages
 ├── types/              # TypeScript type definitions
+├── __tests__/         # Test files
 └── main.tsx           # Application entry point
 ```
 
@@ -157,46 +159,6 @@ src/
 - Monitor compliance and security
 - Generate reports and analytics
 
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env` file in the root directory:
-
-```env
-# API Configuration
-VITE_API_URL=https://api.mediconnect.com
-VITE_WS_URL=wss://ws.mediconnect.com
-
-# Authentication
-VITE_JWT_SECRET=your-jwt-secret
-
-# Third-party Integrations
-VITE_STRIPE_PUBLIC_KEY=pk_test_...
-VITE_AGORA_APP_ID=your-agora-app-id
-
-# Feature Flags
-VITE_ENABLE_VIDEO_CALLS=true
-VITE_ENABLE_CHAT=true
-VITE_ENABLE_PRESCRIPTIONS=true
-```
-
-### Build Configuration
-The project uses Vite for building and development:
-
-```bash
-# Development
-npm run dev
-
-# Production build
-npm run build
-
-# Preview production build
-npm run preview
-
-# Linting
-npm run lint
-```
-
 ## 🧪 Testing
 
 ### Demo Accounts
@@ -217,8 +179,20 @@ For testing purposes, use these demo credentials:
 ### Testing Features
 - All user flows are fully functional in demo mode
 - Mock data is used for appointments, messages, and medical records
-- Payment processing uses Stripe test mode
+- Payment processing uses test mode
 - Video calls simulate real functionality without actual video streams
+
+### Running Tests
+```bash
+# Run unit tests
+npm run test
+
+# Run tests with UI
+npm run test:ui
+
+# Run tests with coverage
+npm run test:coverage
+```
 
 ## 🚀 Deployment
 
@@ -314,7 +288,7 @@ The application is fully responsive and optimized for:
 ### Technical Improvements
 - **Real-time Notifications**: WebSocket-based live updates
 - **Offline Support**: Progressive Web App capabilities
-- **Advanced Search**: Elasticsearch integration for better discovery
+- **Advanced Search**: Enhanced search functionality
 - **Performance Optimization**: Code splitting and lazy loading
 - **Enhanced Security**: Additional security layers and monitoring
 
