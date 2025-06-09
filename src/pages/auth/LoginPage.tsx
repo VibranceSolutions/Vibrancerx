@@ -36,6 +36,16 @@ const LoginPage: React.FC = () => {
   const onSubmit = async (data: LoginFormValues) => {
     try {
       await login(data.email, data.password);
+      
+      // Determine redirect based on email for demo purposes
+      let redirectPath = '/patient/landing';
+      if (data.email.includes('doctor')) {
+        redirectPath = '/doctor/landing';
+      } else if (data.email.includes('admin')) {
+        redirectPath = '/admin/landing';
+      }
+      
+      navigate(redirectPath);
     } catch (error) {
       setError('root', {
         message: 'Invalid email or password. Please try again.',

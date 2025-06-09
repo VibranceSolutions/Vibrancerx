@@ -60,8 +60,8 @@ const RegisterPage: React.FC = () => {
         role: data.role as UserRole,
       });
       
-      // Redirect based on role
-      navigate(`/${data.role}/dashboard`);
+      // Redirect to role-specific landing page
+      navigate(`/${data.role}/landing`);
     } catch (error) {
       setError('root', {
         message: 'Registration failed. Please try again.',
