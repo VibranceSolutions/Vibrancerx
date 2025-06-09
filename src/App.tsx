@@ -13,6 +13,11 @@ import LoginPage from '@/pages/auth/LoginPage';
 import RegisterPage from '@/pages/auth/RegisterPage';
 import ForgotPasswordPage from '@/pages/auth/ForgotPasswordPage';
 
+// Landing Pages
+import PatientLandingPage from '@/pages/patient/LandingPage';
+import DoctorLandingPage from '@/pages/doctor/LandingPage';
+import AdminLandingPage from '@/pages/admin/LandingPage';
+
 // Patient Pages
 import PatientDashboard from '@/pages/patient/Dashboard';
 import DoctorDirectory from '@/pages/patient/DoctorDirectory';
@@ -56,14 +61,15 @@ const App: React.FC = () => {
       {/* Public Routes */}
       <Route element={<RootLayout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={!user ? <LoginPage /> : <Navigate to="/patient/dashboard" />} />
-        <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to="/patient/dashboard" />} />
+        <Route path="/login" element={!user ? <LoginPage /> : <Navigate to={`/${user.role}/landing`} />} />
+        <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to={`/${user.role}/landing`} />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Route>
 
       {/* Patient Routes */}
       <Route element={<ProtectedRoute role="patient" />}>
         <Route element={<PatientLayout />}>
+          <Route path="/patient/landing" element={<PatientLandingPage />} />
           <Route path="/patient/dashboard" element={<PatientDashboard />} />
           <Route path="/patient/find-doctors" element={<DoctorDirectory />} />
           <Route path="/patient/book/:doctorId" element={<BookAppointment />} />
@@ -78,6 +84,7 @@ const App: React.FC = () => {
       {/* Doctor Routes */}
       <Route element={<ProtectedRoute role="doctor" />}>
         <Route element={<DoctorLayout />}>
+          <Route path="/doctor/landing" element={<DoctorLandingPage />} />
           <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
           <Route path="/doctor/appointments" element={<DoctorAppointments />} />
           <Route path="/doctor/profile" element={<DoctorProfile />} />
@@ -90,6 +97,7 @@ const App: React.FC = () => {
       {/* Admin Routes */}
       <Route element={<ProtectedRoute role="admin" />}>
         <Route element={<AdminLayout />}>
+          <Route path="/admin/landing" element={<AdminLandingPage />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<ManageUsers />} />
           <Route path="/admin/appointments" element={<ManageAppointments />} />
@@ -112,13 +120,13 @@ const ProtectedRoute: React.FC<React.PropsWithChildren<ProtectedRouteProps>> = (
   const { user } = useAuth();
 
   if (!user) {
-    return <Navigate to="/login\" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   if (user.role !== role) {
-    if (user.role === 'patient') return <Navigate to="/patient/dashboard" replace />;
-    if (user.role === 'doctor') return <Navigate to="/doctor/dashboard" replace />;
-    if (user.role === 'admin') return <Navigate to="/admin/dashboard" replace />;
+    if (user.role === 'patient') return <Navigate to="/patient/landing" replace />;
+    if (user.role === 'doctor') return <Navigate to="/doctor/landing" replace />;
+    if (user.role === 'admin') return <Navigate to="/admin/landing" replace />;
   }
 
   return <>{children}</>;
