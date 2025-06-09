@@ -211,7 +211,7 @@ const ServicesPage: React.FC = () => {
             medical services through our secure telemedicine platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/register">
+            <Link to="/login">
               <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                 Book Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -273,7 +273,7 @@ const ServicesPage: React.FC = () => {
                   ))}
                 </ul>
                 
-                <Link to="/register">
+                <Link to="/login">
                   <Button 
                     className={`w-full ${type.popular ? 'bg-primary hover:bg-primary-dark' : ''}`}
                     variant={type.popular ? 'primary' : 'outline'}
@@ -326,7 +326,7 @@ const ServicesPage: React.FC = () => {
                   </div>
                 </div>
                 
-                <Link to="/register">
+                <Link to="/login">
                   <Button variant="outline" className="w-full">
                     Book Consultation
                   </Button>
@@ -408,7 +408,7 @@ const ServicesPage: React.FC = () => {
                   ))}
                 </ul>
                 
-                <Link to="/register">
+                <Link to="/login">
                   <Button 
                     className={`w-full ${plan.popular ? 'bg-primary hover:bg-primary-dark' : ''}`}
                     variant={plan.popular ? 'primary' : 'outline'}
@@ -538,7 +538,7 @@ const ServicesPage: React.FC = () => {
             and quality of MediConnect's healthcare services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/register">
+            <Link to="/login">
               <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                 Book Your First Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />

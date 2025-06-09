@@ -87,7 +87,7 @@ const HomePage: React.FC = () => {
                 Get the care you need, when you need it.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/register">
+                <Link to="/login">
                   <Button size="lg" className="bg-white text-primary hover:bg-gray-100 w-full sm:w-auto">
                     Get Started Today
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -194,7 +194,7 @@ const HomePage: React.FC = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Link to="/register">
+            <Link to="/login">
               <Button size="lg">
                 Browse All Specialties
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -298,7 +298,7 @@ const HomePage: React.FC = () => {
             Join thousands of patients who have already discovered the convenience of telemedicine.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/register">
+            <Link to="/login">
               <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
